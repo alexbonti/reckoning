@@ -29,4 +29,10 @@ main {
   width: 100%;
 
 }
+
+.journalBox{
+  background-color: white;
+  border: 1px solid red;
+  margin-bottom: 9px;
+}
     

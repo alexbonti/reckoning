@@ -16,8 +16,8 @@
 
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
 
     <link href="styles.css" rel="stylesheet">
 </head>
@@ -32,6 +32,8 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="https://www.linkedin.com/in/alessiobonti">Linkedin</a></li>
                 </ul>
+                <a class="btn-floating btn-small waves-effect waves-light red right modal-trigger" href="#modalJournal"><i class="material-icons">add</i></a>
+
             </div>
         </nav>
     </header>
@@ -39,50 +41,45 @@
 
         <div class="container">
             <h1 class="title">The NEXUS</h1>
+            <div class="row center" style="height: 100px;">
+                <img src="assets/ale2.jpg" alt="" class="circle responsive-img"
+                    style="height: 100%;padding-top: 5px; padding-left: 15px;"> <!-- notice the "circle" class -->
+
+            </div>
+
             <div class="row">
                 <div class="col s12">
-                  <ul class="tabs">
-                    <li class="tab col s6"><a class="active" href="#map">Map</a></li>
-                    <li class="tab col s6"><a  href="#journal">Journal</a></li>
-                  </ul>
+                    <ul class="tabs">
+                        <li class="tab col s6"><a class="active" href="#map">Map</a></li>
+                        <li class="tab col s6"><a href="#journal">Journal</a></li>
+                    </ul>
                 </div>
                 <div id="map" class="col s12">
                     <div id="worldMap">
 
                     </div>
                 </div>
-                <div id="journal" class="col s12">Test 2</div>
-              </div>
 
+                <!-- JOURNAL -->
+                <div id="journal" class="col s12">
+                </div>
 
-
-            <div class="row">
-                <p class="flow-text mainText">This is a basic boilerplate i have created based on Node Express and Materialize, I hope it will help you develop your next project!</p>
             </div>
-            <div class="row center" style="height: 150px;">
-                <img src="assets/ale2.jpg" alt="" class="circle responsive-img" style="height: 100%;padding-top: 5px; padding-left: 15px;"> <!-- notice the "circle" class -->
-    
-    
-            </div>
-            <div class="row center " style="padding-top:50px;">
-                <a id="testButton" class="waves-effect waves-light btn-large " style="background-color: #9E65A9;"><i class="material-icons left" style="color:white font-size: larger;">emoji_people</i>Click me!</a>
 
-    
-            </div>
-    
 
           
         </div>
-    
+
     </main>
     <footer class="page-footer">
         <div class="footer-copyright">
-          <div class="container">
-          © 2020 Copyright AlexNexus
-          <a class="grey-text text-lighten-4 right" href="https://github.com/alexbonti/node-material"><img src="assets/git-logo.svg" style="height: 20px; padding-right: 15px;"></i>Boiler plate here !</a>
-          </div>
+            <div class="container">
+                © 2020 Copyright AlexNexus
+                <a class="grey-text text-lighten-4 right" href="https://github.com/alexbonti/node-material"><img
+                        src="assets/git-logo.svg" style="height: 20px; padding-right: 15px;"></i>Boiler plate here !</a>
+            </div>
         </div>
-      </footer>
+    </footer>
 
 
 
@@ -98,8 +95,8 @@
 
     <!-- Leaflet -->
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
 
     <script src="env.js"></script>
 
@@ -107,19 +104,53 @@
 
 </html>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Welcome to the Reckoning</h4>
-      <p>What is your username?</p>
-      <div class="row">
-        <div class="input-field col s12">
-          <input value="" id="username" type="text" class="validate">
-          <label class="username" for="username">Username</label>
+        <h4>Welcome to the Reckoning</h4>
+        <p>What is your username?</p>
+        <div class="row">
+            <div class="input-field col s12">
+                <input value="" id="username" type="text" class="validate">
+                <label class="username" for="username">Username</label>
+            </div>
         </div>
-      </div>
     </div>
     <div class="modal-footer">
-      <a onclick="login()" href="#!" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+        <a onclick="login()" href="#!" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
     </div>
-  </div>
+</div>
+
+
+<!-- Modal Structure -->
+<div id="modalComments" class="modal">
+    <div class="modal-content">
+        <h4>Comment the post </h4>
+        <div class="row">
+            <div class="input-field col s12">
+                <input value="" id="commentText" type="text" class="validate">
+                <label class="username" for="commentText">Comment</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a onclick="submitPost()" href="#!" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+    </div>
+</div>
+
+
+<!-- Modal Structure -->
+<div id="modalJournal" class="modal">
+    <div class="modal-content">
+        <h4>New Journal Entry</h4>
+        <div class="row">
+            <div class="input-field col s12">
+                <input value="" id="journalText" type="text" class="validate">
+                <label class="username" for="journalText">Your story ...</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a onclick="newJournal()" href="#!" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+    </div>
+</div>
