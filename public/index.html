@@ -26,9 +26,8 @@
     <header>
         <nav>
             <div class="nav-wrapper" style=" background-color: #9E65A9;">
-                <a href="#" class="brand-logo" style="height: 100%;">
-                    <img src="assets/ale.jpg" alt="" class="circle responsive-img" style="height: 100%;padding-top: 5px; padding-left: 15px;"> <!-- notice the "circle" class -->
-    
+                <a id="user" href="#" class="brand-logo" style="height: 100%;">
+                    <a id='buttonLogin' class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a>
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="https://www.linkedin.com/in/alessiobonti">Linkedin</a></li>
@@ -39,16 +38,20 @@
     <main>
 
         <div class="container">
-            <h1 class="title">Alex NExUs</h1>
+            <h1 class="title">The NEXUS</h1>
             <div class="row">
                 <div class="col s12">
                   <ul class="tabs">
-                    <li class="tab col s3"><a href="#map">Map</a></li>
-                    <li class="tab col s3"><a class="active" href="#journal">Journal</a></li>
+                    <li class="tab col s6"><a class="active" href="#map">Map</a></li>
+                    <li class="tab col s6"><a  href="#journal">Journal</a></li>
                   </ul>
                 </div>
-                <div id="test1" class="col s12">Test 1</div>
-                <div id="test2" class="col s12">Test 2</div>
+                <div id="map" class="col s12">
+                    <div id="worldMap">
+
+                    </div>
+                </div>
+                <div id="journal" class="col s12">Test 2</div>
               </div>
 
 
@@ -93,8 +96,30 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+
     <script src="env.js"></script>
 
 </body>
 
 </html>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Welcome to the Reckoning</h4>
+      <p>What is your username?</p>
+      <div class="row">
+        <div class="input-field col s12">
+          <input value="" id="username" type="text" class="validate">
+          <label class="username" for="username">Username</label>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a onclick="login()" href="#!" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+    </div>
+  </div>
